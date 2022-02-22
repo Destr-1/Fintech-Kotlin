@@ -17,6 +17,7 @@ class Professor(override val name: String, override val age: Int) : Educationer 
     }
 
     fun lecture(count: Int) {
+        println()
         println("Professor give a lecture for $count students")
     }
 }

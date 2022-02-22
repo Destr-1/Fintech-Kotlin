@@ -17,6 +17,7 @@ class Assistant(override val name: String, override val age: Int) : Educationer 
     }
 
     fun lab(item: String) {
+        println()
         println("Assistant check labarotory work \"$item\"")
     }
 }

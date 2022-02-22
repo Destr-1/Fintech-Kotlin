@@ -32,6 +32,8 @@ fun main() {
         println()
         it.lessonInfo()
     }
+    println()
 
-
+    professor.lecture(45)
+    assistant.lab("Konlin")
 }

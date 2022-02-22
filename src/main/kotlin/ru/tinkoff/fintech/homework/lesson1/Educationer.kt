@@ -17,8 +17,8 @@ interface Educationer {
         println(this)
         println("Name: $name \tAge: $age")
     }
-
 }
+
 
 
 
