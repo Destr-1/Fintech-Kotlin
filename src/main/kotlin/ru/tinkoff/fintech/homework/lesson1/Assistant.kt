@@ -1,6 +1,6 @@
 package ru.tinkoff.fintech.homework.lesson1
 
-class Assistant(override val name: String, override val age: Int) : Educationer {
+class Assistant(override val name: String, override var age: Int) : Educationer {
     private var knowledgeLevel = 30
     override fun process() {
         "Assistant: ".personPrint()
@@ -14,6 +14,11 @@ class Assistant(override val name: String, override val age: Int) : Educationer 
     override fun knowledgeLevelInfo() {
         "Assistant: ".personPrint()
         println("has knowledgeLevel = $knowledgeLevel")
+    }
+
+    override fun knowledgeLevel() = knowledgeLevel
+    override fun newKnowledgeLevel(level: Int) {
+        knowledgeLevel += level
     }
 
     fun lab(item: String) {
