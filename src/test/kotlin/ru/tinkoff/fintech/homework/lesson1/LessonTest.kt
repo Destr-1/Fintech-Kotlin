@@ -32,7 +32,11 @@ class LessonTest {
         every { assistant.knowledgeLevelInfo() } throws IllegalStateException("Cannot print LevelInfo")
         every { assistant.newKnowledgeLevel(any()) } throws IllegalStateException("Cannot set new knowledge Level")
         every { assistant.age } returns 10
-        every { assistant.name } returns "Ассистент-заглушка"
+        every { assistant.name } returns "Ассистент-заглушка "
+        every {assistant.addKnowledgeLevel(any())} returns 1000
+        every {assistant.addKnowledgeLevel(10)} returns 100
+        every {assistant.addKnowledgeLevel(30)} returns 300
+
     }
 
     @Test
@@ -50,7 +54,11 @@ class LessonTest {
         assertAll(
             { verify(exactly = 2) { assistant.process() } },
             { verify(exactly = 2) { assistant.name } },
-            { assertEquals(10, assistant.age) }
+            { assertEquals(10, assistant.age) },
+            {verify(exactly = 2) {assistant.addKnowledgeLevel(10)} },
+            {verify(exactly = 2) {assistant.addKnowledgeLevel(30)} },
+            {verify(exactly = 6) {assistant.addKnowledgeLevel(any())} },
+            { assertEquals(100,assistant.addKnowledgeLevel(10))}
         )
     }
 }

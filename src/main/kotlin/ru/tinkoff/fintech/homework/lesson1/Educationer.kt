@@ -11,6 +11,7 @@ interface Educationer {
     fun knowledgeLevelInfo()
     fun knowledgeLevel() : Int
     fun newKnowledgeLevel(level: Int)
+    fun addKnowledgeLevel(level:Int):Int
 
     fun educationerInfo() = "Information about educationer".personPrint()
 

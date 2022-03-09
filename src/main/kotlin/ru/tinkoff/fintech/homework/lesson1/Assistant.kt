@@ -17,6 +17,7 @@ class Assistant(override val name: String, override var age: Int) : Educationer 
     }
 
     override fun knowledgeLevel() = knowledgeLevel
+    override fun addKnowledgeLevel(level:Int) = knowledgeLevel + level
     override fun newKnowledgeLevel(level: Int) {
         knowledgeLevel += level
     }

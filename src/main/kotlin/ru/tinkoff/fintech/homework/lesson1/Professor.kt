@@ -21,6 +21,7 @@ class Professor(override val name: String, override var age: Int) : Educationer 
     }
 
     override fun knowledgeLevel() = knowledgeLevel
+    override fun addKnowledgeLevel(level:Int) = knowledgeLevel + level
 
     fun lecture(count: Int) {
         println()
