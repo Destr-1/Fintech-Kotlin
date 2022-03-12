@@ -24,6 +24,9 @@ class LessonTest {
     fun startUp() {
         every { professor.process() } returns Unit // println("Работает профессор")
         every { professor.name } returns "Профессор-заглушка"
+        every {professor.addKnowledgeLevel(any())} returns 2000
+        every {professor.addKnowledgeLevel(10)} returns 2200
+        every {professor.addKnowledgeLevel(30)} returns 2300
 
         every { assistant.process() } returns Unit
         every { assistant.training() } returns Unit //println("Повышение квалификации ассистента")
@@ -36,7 +39,6 @@ class LessonTest {
         every {assistant.addKnowledgeLevel(any())} returns 1000
         every {assistant.addKnowledgeLevel(10)} returns 100
         every {assistant.addKnowledgeLevel(30)} returns 300
-
     }
 
     @Test
