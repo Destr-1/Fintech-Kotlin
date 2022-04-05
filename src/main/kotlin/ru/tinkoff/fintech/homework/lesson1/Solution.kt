@@ -1,5 +1,6 @@
 package ru.tinkoff.fintech.homework.lesson1
 
+/*
 fun main() {
     val professor = Professor("Старый Иванов", 64)
     val assistant = Assistant("Молодой Сидоров", 24)
@@ -37,3 +38,4 @@ fun main() {
     professor.lecture(45)
     assistant.lab("Konlin")
 }
+*/
