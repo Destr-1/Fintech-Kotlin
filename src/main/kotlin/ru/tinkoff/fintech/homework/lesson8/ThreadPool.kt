@@ -1,9 +1,8 @@
 package ru.tinkoff.fintech.homework.lesson8
 
 import java.util.concurrent.LinkedBlockingQueue
-import kotlin.reflect.jvm.internal.impl.load.kotlin.JvmType
 
-class ThreadPool(private val size: Int) : java.util.concurrent.Executor {
+class ThreadPool(size: Int) : java.util.concurrent.Executor {
     private val threadList: MutableList<Thread> = mutableListOf()
     private val taskQueue: LinkedBlockingQueue<Runnable> = LinkedBlockingQueue()
     private var isShutDown = false
@@ -30,12 +29,14 @@ class ThreadPool(private val size: Int) : java.util.concurrent.Executor {
         for (thread in threadList) {
             thread.interrupt()
         }
+        for (thread in threadList) {
+            thread.join()
+        }
     }
 
     inner class WorkerThread() : java.lang.Thread() {
         override fun run() {
             super.run()
-            val currentThread = currentThread()
             while (true) {
                 var task: Runnable? = null
                 try {
@@ -60,4 +61,3 @@ class ThreadPool(private val size: Int) : java.util.concurrent.Executor {
         }
     }
 }
-
