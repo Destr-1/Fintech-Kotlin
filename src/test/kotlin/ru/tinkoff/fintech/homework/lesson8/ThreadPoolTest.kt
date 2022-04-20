@@ -4,7 +4,6 @@ import java.util.concurrent.atomic.AtomicInteger
 import kotlin.test.assertEquals
 
 class ThreadPoolTest {
-    @Volatile
     private var x:AtomicInteger = AtomicInteger(0)
 
     @Test
